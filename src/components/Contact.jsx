@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import '../styles/contact.css'
 
 const SERVICE_ID = 'service_ijup99k'
 const TEMPLATE_ID = 'template_xlio6gi'

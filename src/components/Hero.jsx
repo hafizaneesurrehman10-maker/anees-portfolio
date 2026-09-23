@@ -1,5 +1,6 @@
 import NeuralBackground from './NeuralBackground'
 import Orb from './Orb'
+import '../styles/hero.css'
 
 function Hero() {
   return (

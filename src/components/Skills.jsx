@@ -1,3 +1,4 @@
+import '../styles/skills.css'
 function CategoryIcon({ type }) {
   const icons = {
     languages: (

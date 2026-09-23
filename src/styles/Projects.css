@@ -1,0 +1,209 @@
+.projects-section {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border);
+  background: #10121A;
+}
+
+.projects-section .experience-container {
+  position: relative;
+  z-index: 1;
+}
+
+.projects-section .section-label {
+  color: #A855F7;
+}
+
+/* Soft static glow layer to echo the hero's ai-orb, without motion */
+.neural-canvas-static {
+  position: absolute;
+  top: -10%;
+  right: -8%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(91, 141, 239, 0.28) 0%, rgba(168, 85, 247, 0.16) 45%, rgba(168, 85, 247, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.project-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  padding: 1.85rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  isolation: isolate;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Glow layer that fades in on hover */
+.project-card-glow {
+  position: absolute;
+  inset: -40%;
+  z-index: -1;
+  background: radial-gradient(circle at 30% 20%, rgba(91, 141, 239, 0.22), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.project-card:hover .project-card-glow {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(91, 141, 239, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(91, 141, 239, 0.25);
+}
+
+/* Gradient top edge accent, revealed on hover */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Top row: icon + live demo link */
+.project-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.project-icon-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(91, 141, 239, 0.3);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #C7CBD6;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.project-link:hover {
+  text-decoration: none;
+  background: var(--gradient);
+  color: #fff;
+  border-color: transparent;
+  transform: translateX(1px);
+}
+
+.project-type {
+  font-size: 0.72rem;
+  color: #8FB0F5;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  line-height: 1.25;
+  color: #F5F6F8;
+}
+
+.project-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #8B90A0;
+  margin-bottom: 1rem;
+}
+
+.project-desc {
+  color: #A8ADBB;
+  font-size: 0.94rem;
+  margin-bottom: 1rem;
+  line-height: 1.55;
+}
+
+.project-card ul {
+  padding-left: 1.1rem;
+  margin: 0 0 1.25rem;
+}
+
+.project-card li {
+  color: #A8ADBB;
+  font-size: 0.89rem;
+  margin-bottom: 0.45rem;
+  line-height: 1.5;
+}
+
+.project-card .tag-row {
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+
+.project-card .tech-tag {
+  color: #8FB0F5;
+  background: rgba(91, 141, 239, 0.1);
+  border: 1px solid rgba(91, 141, 239, 0.28);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover .tech-tag {
+  border-color: rgba(91, 141, 239, 0.5);
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .neural-canvas-static {
+    width: 220px;
+    height: 220px;
+  }
+}

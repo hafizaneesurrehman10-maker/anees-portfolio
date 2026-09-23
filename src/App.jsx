@@ -1,4 +1,4 @@
-import './styles/global.css'
+import './styles/base.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Experience from './components/Experience'

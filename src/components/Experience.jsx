@@ -1,5 +1,5 @@
 import AIStatusPanel from './AIStatusPanel'
-
+import '../styles/experience.css'
 function RoleIcon({ type }) {
   if (type === 'engineer') {
     return (

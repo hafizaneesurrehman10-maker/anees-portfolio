@@ -1,3 +1,5 @@
+
+import '../styles/projects.css'
 function ProjectIcon({ type }) {
   const icons = {
     saas: (
