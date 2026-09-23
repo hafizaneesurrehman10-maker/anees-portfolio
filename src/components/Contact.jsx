@@ -74,7 +74,7 @@ function Contact() {
     {
       type: 'email',
       label: 'Email',
-      value: 'hafizaneesurrehman10@gmail.com',
+      value: 'aneesurrehman075@gmail.com',
       href: 'mailto:hafizaneesurrehman10@gmail.com',
     },
     {

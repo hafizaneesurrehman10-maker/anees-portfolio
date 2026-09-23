@@ -22,7 +22,7 @@ function Hero() {
 
         <div className="cta-row">
           <a href="#projects" className="btn-primary-custom">View projects</a>
-          <a href="mailto:aneesurrehman075@gmail.com" className="btn-secondary-custom">Get in touch</a>
+          <a href="#contact" className="btn-secondary-custom">Get in touch</a>
         </div>
       </div>
     </header>
